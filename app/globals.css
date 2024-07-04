@@ -10,3 +10,6 @@ body {
   font-family: "Aref Ruqaa", serif;
   font-weight: 400; /* or 700 for bold */
 }
+.duration-5000 {
+  transition-duration: 2000ms;
+}

@@ -18,6 +18,9 @@ module.exports = {
         secondary: "#f8d2a1",
         text: "#2d2d2d",
       },
+      transitionTimingFunction: {
+        "custom-ease": "cubic-bezier(0.85, 0, 0.15, 1)",
+      },
     },
   },
   plugins: [],
