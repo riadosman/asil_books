@@ -60,16 +60,16 @@ const Header = () => {
         </ul>
         <div className="flex items-center gap-8">
           <div className="flex items-center justify-between">
-            {inputVisiable && (
-              <input
-                type="text"
-                placeholder="Search book"
-                className="py-1 px-2 outline-none border-2 border-slate-200 text-xl rounded-xl mx-2"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={handleKeyDown}
-              />
-            )}
+            <input
+              type="text"
+              placeholder="ابحث عن كتابك"
+              className={`${
+                inputVisiable ? "" : "hidden"
+              } text-right py-1 px-2 outline-none border-2 border-slate-200 text-xl rounded-xl mx-2`}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleKeyDown}
+            />
             <Image
               src="/images_s/search.svg"
               alt="search"

@@ -32,7 +32,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="relative flex justify-center items-center h-[100vh] overflow-hidden my-4">
+    <div className="relative flex justify-center items-center lg:h-[100vh] h-80 overflow-hidden my-4">
       {images.map((image, index) => (
         <div
           className={`absolute top-0 left-0 w-full h-full transition-transform duration-5000 ease-custom-ease ${

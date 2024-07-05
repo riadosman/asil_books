@@ -13,3 +13,16 @@ body {
 .duration-5000 {
   transition-duration: 2000ms;
 }
+.rotate-container {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.rotate-container:hover {
+  transform: rotateY(360deg);
+}
+
+.rotate-image {
+  transition: transform 0.5s;
+  backface-visibility: hidden;
+}

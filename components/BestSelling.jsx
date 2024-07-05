@@ -12,14 +12,20 @@ function BestSelling() {
           نضع بين يديك مجموعة كبيرة من الكتب الإسلامية و الروايات و كتب التنمية
           البشرية
         </p>
-        <div className="grid grid-cols-4 gap-5 text-center my-10 text-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 text-center my-10 text-lg">
           {booksData.slice(0, 4).map((book, index) => (
             <Link
               href={`/books/detail?name=${encodeURIComponent(book.name)}`}
               key={index}
               className="w-full border-2 border-secondary p-4 rounded cursor-pointer"
             >
-              <Image src={book.img} alt={book.name} width={300} height={200} />
+              <Image
+                src={book.img}
+                alt={book.name}
+                width={300}
+                height={200}
+                className="w-full"
+              />
               <h2>{book.name}</h2>
               <p>{book.writer}</p>
               <p className="font-bold">${book.price}</p>
