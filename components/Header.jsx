@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import ShoppingCart from "./ShoppingCart";
 
 const Header = () => {
   const [query, setQuery] = useState("");
@@ -96,29 +97,7 @@ const Header = () => {
           </div>
           {cartVisiable && (
             <>
-              <div className="border-2 border-slate-200  p-2 cart bg-white w-1/3 h-96 absolute top-20 right-10 z-50">
-                <div className="flex items-center justify-between border-b-2 border-text py-3 w-full">
-                  <p className="text-xl">Shopping Cart</p>
-                  <Image
-                    src="/images_s/vector.svg"
-                    alt="vector"
-                    width={15}
-                    height={15}
-                    className="m-2 cursor-pointer"
-                    onClick={() => handleCartClose()}
-                  />
-                </div>
-                <div className="w-full h-full flex items-center justify-center flex-col gap-5">
-                  <p>No products in the cart.</p>
-                  <Link
-                    href="/books"
-                    onClick={() => handleCartClose()}
-                    className="bg-main py-1 px-2 rounded text-white text-xl"
-                  >
-                    ابدء بلتسوق
-                  </Link>
-                </div>
-              </div>
+              <ShoppingCart />
             </>
           )}
           <div className="lg:hidden flex flex-col gap-1">

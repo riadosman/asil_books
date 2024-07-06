@@ -27,48 +27,49 @@ function Detail() {
         <>
           <div className="flex lg:flex-row flex-col items-center justify-between gap-10 leading-loose">
             <Image src={book.img} alt={book.name} width={500} height={400} />
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 text-right text-xl">
               <p>{book.category}</p>
               <h1 className="text-2xl font-bold">{book.name}</h1>
               <p>{book.description}</p>
               <p>
-                <strong>Author:</strong> {book.writer}
+                <strong>الكاتب:</strong>{" "}
+                <Link href={`/books?writer=${book.writer}`}>{book.writer}</Link>
               </p>
               <p>
-                <strong>Language:</strong> {book.language}
+                <strong>لغة الكتاب:</strong> {book.language}
               </p>
               <p>
-                <strong>Book Format:</strong> {book.bookFormat}
+                <strong>جنس الكتاب:</strong> {book.bookFormat}
               </p>
               <p>
-                <strong>Number Of Pages:</strong> {book.numberOfPages}
+                <strong>عدد الصفحات:</strong> {book.numberOfPages}
               </p>
               <hr className="border-1 border-main my-6" />
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-col gap-4 lg:flex-row">
                 <p>
-                  <strong>Price:</strong> {book.price} $
+                  <strong>السعر:</strong> {book.price} $
                 </p>
                 <button className="border-[1px] w-[200px] border-main text-main cursor-pointer rounded py-2 px-2 flex items-center justify-center hover:bg-main duration-200 hover:text-white">
-                  Add to cart
+                  اضافة الى السلة
                 </button>
               </div>
             </div>
           </div>
           <div className="bg-white py-24 sm:py-32 text-center">
-            <h1 className="mb-10 text-3xl font-bold">Users Comments</h1>
+            <h1 className="mb-10 text-3xl font-bold">بعض الأراء</h1>
             <div className="mx-auto">
               <ul
                 role="list"
                 className="gap-x-8 gap-y-12 flex items-center justify-between"
               >
                 {book.commentsForBook.map((person) => (
-                  <li key={person.user}>
-                    <div className="flex items-center gap-x-6 border-2 p-6">
+                  <li key={person.user} className="flex-1 text-center">
+                    <div className="flex items-center justify-center gap-x-6 border-2 p-6">
                       <div>
-                        <h3 className="text-base font-bold leading-7 tracking-tight text-gray-900">
+                        <h3 className="text-2xl font-bold leading-7 tracking-tight text-gray-900">
                           {person.user}
                         </h3>
-                        <p className="text-sm font-semibold leading-6 text-text">
+                        <p className="my-2 text-md font-semibold leading-6 text-text">
                           {person.comment}
                         </p>
                         <StarRating rating={person.rating} />
@@ -80,7 +81,7 @@ function Detail() {
               <div className="flex items-center mt-10">
                 <input
                   type="text"
-                  placeholder="Add Comment...."
+                  placeholder="اكتب رئيك....."
                   className="w-4/5 py-2 px-4 border-2 border-primary"
                 />
                 <button className="w-1/5 py-2 px-4 border-2 border-primary bg-primary">
@@ -89,16 +90,16 @@ function Detail() {
               </div>
             </div>
           </div>
-          <div>
-            <p className="text-4xl font-bold">Related products</p>
-            <div className="grid grid-cols-4 gap-5 text-center my-5">
+          <div className="text-right">
+            <p className="text-4xl font-bold">منتجات ذات صلة</p>
+            <div className="grid lg:grid-cols-4 grid-cols-1 gap-5 text-center my-5">
               {booksData.map((e, index) => {
                 if (e.category === book.category) {
                   return (
                     <Link
                       href={`/books/detail?name=${encodeURIComponent(e.name)}`}
                       key={index}
-                      className="w-fit cursor-pointer"
+                      className="w-full lg:w-fit cursor-pointer"
                     >
                       <Image
                         src={e.img}
@@ -106,9 +107,9 @@ function Detail() {
                         width={300}
                         height={200}
                       />
-                      <h2>{e.name}</h2>
-                      <p>Price: ${e.price}</p>
-                      <p>Writer: {e.writer}</p>
+                      <h2 className="text-xl my-2">{e.name}</h2>
+                      <p>السعر: ${e.price}</p>
+                      <p>الكاتب: {e.writer}</p>
                     </Link>
                   );
                 }

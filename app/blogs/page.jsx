@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { getIntroduction } from "@/utils/getIntroduction";
 import { blogsData } from "@/lib/data";
 import BlogCard from "@/components/BlogCard";
 
@@ -16,12 +15,11 @@ function Blogs() {
         <div className="w-3/5 bg-secondary rounded h-fit hidden lg:flex flex-col">
           <p className="text-3xl text-right p-4">مقالات ذات صلة</p>
           {blogsData.map((e, i) => {
-            const introduction = getIntroduction(blogsData[i]);
             return (
               <BlogCard
                 key={i}
                 index={i + 1}
-                introduction={introduction}
+                introduction={e.content[0].desc}
                 title={e.title}
                 StyleClass={
                   "flex flex-col-reverse gap-5 border-t-2 border-white p-4 text-center"
@@ -32,7 +30,7 @@ function Blogs() {
         </div>
         <div className="flex flex-col gap-5">
           {blogsData.map((e, i) => {
-            const introduction = getIntroduction(blogsData[i]);
+            const introduction = e.content[0].desc;
             return (
               <BlogCard
                 key={i}

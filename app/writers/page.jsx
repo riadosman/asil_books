@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Writers } from "@/lib/data";
 function page() {
   return (
@@ -12,6 +13,12 @@ function page() {
           <div className="flex flex-col text-right justify-between gap-10">
             <h1 className="text-4xl">{e.title}</h1>
             <p className="leading-9">{e.biography}</p>
+            <Link
+              href={`/books?writer=${e.title}`}
+              className="-mt-4 underline text-main"
+            >
+              اتطلع على كتب الكاتب
+            </Link>
           </div>
         </div>
       ))}
