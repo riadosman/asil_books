@@ -8,8 +8,16 @@ import { booksData } from "@/lib/data.js";
 import SearchResult from "@/components/SearchResult";
 import WriterResult from "@/components/WriterResult";
 import Swal from "sweetalert2";
-
+import { Suspense } from "react"; // Import Suspense
 function Books() {
+  return (
+    <Suspense fallback={<p>Loading....</p>}>
+      <BooksContent />
+    </Suspense>
+  );
+}
+
+function BooksContent() {
   const [books, setBooks] = useState(booksData);
   const [message, setMessage] = useState("جميع الكتب");
   const searchParams = useSearchParams();
@@ -18,7 +26,7 @@ function Books() {
 
   useEffect(() => {
     Swal.fire({
-      title: "تحزير",
+      title: "تحذير",
       text: "هذه المعلومات هي معلومات عشوائية و سوف يتم تعديلها حسب الطلب",
       icon: "info",
       confirmButtonText: "العودة",

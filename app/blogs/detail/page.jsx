@@ -3,7 +3,17 @@ import { useSearchParams } from "next/navigation";
 import { blogsData } from "@/lib/data";
 import Image from "next/image";
 import BlogCard from "@/components/BlogCard";
+import { Suspense } from "react"; // Import Suspense
+
 function Detail() {
+  // Wrap useSearchParams() in Suspense
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <DetailContent />
+    </Suspense>
+  );
+}
+function DetailContent() {
   const searchParams = useSearchParams();
   const title = searchParams.get("title");
   return (
