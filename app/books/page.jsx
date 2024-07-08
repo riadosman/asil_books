@@ -62,9 +62,10 @@ function BooksContent() {
             <Link
               href={`/books/detail?name=${encodeURIComponent(book.name)}`}
               key={index}
-              className="w-full border-2 border-secondary p-4 rounded cursor-pointer"
+              className="w-full border-2 border-secondary p-4 rounded cursor-pointer relative"
             >
               <Image src={book.img} alt={book.name} width={300} height={200} />
+
               <h2>{book.name}</h2>
               <p>السعر: ${book.price}</p>
               <p>الكاتب: {book.writer}</p>

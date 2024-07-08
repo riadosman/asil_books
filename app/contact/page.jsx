@@ -1,7 +1,12 @@
 "use client";
 import Swal from "sweetalert2";
 import { handleContact } from "@/utils/contact";
+import { useState } from "react";
 function Contact() {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+
   return (
     <form
       className="container p-10 text-right font-serif"
@@ -80,10 +85,18 @@ function Contact() {
         </button>
         <button
           onClick={() => {
+            if (email && name && message) {
+              Swal.fire({
+                title: "خطأ",
+                text: "يرجى ملىء المعلومات",
+                icon: "error",
+                confirmButtonText: "العودة",
+              });
+            }
             Swal.fire({
-              title: "خطأ",
-              text: "يرجى ملىء المعلومات",
-              icon: "error",
+              title: "لقد تمت العملية",
+              text: "سوف نتواصل معكم باقرب وقت",
+              icon: "success",
               confirmButtonText: "العودة",
             });
           }}

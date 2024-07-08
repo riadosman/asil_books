@@ -1,19 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { booksData } from "@/lib/data.js";
+import { BestSellingBooks } from "@/lib/data.js";
 
 function BestSelling() {
   return (
     <div>
-      <div className="container text-center text-3xl">
+      <div className="container text-center lg:text-2xl text-lg">
         <h2 className="text-4xl mt-10 mb-5">الكتب الاكثر مبيعا</h2>
         <p>
           نضع بين يديك مجموعة كبيرة من الكتب الإسلامية و الروايات و كتب التنمية
           البشرية
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 text-center my-10 text-lg">
-          {booksData.slice(0, 4).map((book, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 text-center my-10 text-lg">
+          {BestSellingBooks.map((book, index) => (
             <Link
               href={`/books/detail?name=${book.name}`}
               key={index}
@@ -28,7 +28,7 @@ function BestSelling() {
               />
               <h2>{book.name}</h2>
               <p>{book.writer}</p>
-              <p className="font-bold">${book.price}</p>
+              <p className="font-bold text-main">${book.price}</p>
             </Link>
           ))}
         </div>

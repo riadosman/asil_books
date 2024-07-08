@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 const Footer = () => {
   return (
-    <div className="border-t-2 shadow-md p-20 bg-slate-200 text-center">
+    <div className="border-t-2 shadow-md lg:p-20 p-10 bg-slate-200 text-center">
       <div className="container flex lg:flex-row flex-col gap-10 items-center justify-between">
         <Link href="/">
           <Image
