@@ -22,7 +22,7 @@ function Detail() {
   }, [name]);
 
   return (
-    <div className="container bg-white w-full p-20">
+    <div className="container bg-white w-full p-10 lg:p-20">
       {book ? (
         <>
           <div className="flex lg:flex-row flex-col items-center justify-between gap-10 leading-loose">

@@ -58,7 +58,7 @@ function BooksContent() {
       <div className="container text-center">
         <p className="text-right my-8 text-3xl">{message}</p>
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-5 text-center my-5">
-          {/* {books.map((book, index) => (
+          {books.map((book, index) => (
             <Link
               href={`/books/detail?name=${encodeURIComponent(book.name)}`}
               key={index}
@@ -69,7 +69,7 @@ function BooksContent() {
               <p>السعر: ${book.price}</p>
               <p>الكاتب: {book.writer}</p>
             </Link>
-          ))} */}
+          ))}
         </div>
       </div>
     </>
