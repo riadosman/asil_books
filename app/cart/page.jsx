@@ -38,9 +38,14 @@ function Cart() {
               <p>{e.name}</p>
               <p className="text-xl">{e.description}</p>
             </div>
-            <div className="flex gap-10 mr-10">
+            <div className="flex items-center justify-between gap-2">
               <p>{e.price}$</p>
-              <input type="number" defaultValue={1} max={10} className="w-6" />
+              <input
+                type="number"
+                defaultValue={1}
+                max={10}
+                className="w-9 text-black p-0 rounded pl-1"
+              />
               <p>العدد</p>
             </div>
             <Image

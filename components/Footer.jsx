@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className="border-t-2 shadow-md p-20 bg-slate-200 text-center">
-      <div className="container flex items-center justify-between">
+      <div className="container flex lg:flex-row flex-col gap-10 items-center justify-between">
         <Link href="/">
           <Image
             src="/images/logor.png"
@@ -13,7 +13,7 @@ const Footer = () => {
             height={150}
           />
         </Link>
-        <ul className="hidden lg:flex lg:justify-between items-center gap-6">
+        <ul className="flex justify-between items-center gap-6">
           <li>
             <Link href="/">الصفحة الرئيسية</Link>
           </li>
@@ -30,9 +30,9 @@ const Footer = () => {
             <Link href="/contact">تواصل معنا</Link>
           </li>
         </ul>
-        <ul className="hidden lg:flex lg:justify-between items-center gap-6">
+        <ul className="flex justify-between items-center gap-6">
           <li>
-            <Link href="/">
+            <Link href="https://www.instagram.com/asil_book/">
               <Image
                 src="/images_s/instagram.svg"
                 alt="social_media"
@@ -42,7 +42,7 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="https://www.facebook.com/asilbook1?mibextid=ZbWKwL">
               <Image
                 src="/images_s/facebook.svg"
                 alt="social_media"
@@ -52,9 +52,9 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="https://t.me/DAR_ALASEEL">
               <Image
-                src="/images_s/twitter.svg"
+                src="/images_s/telegram.svg"
                 alt="social_media"
                 width={20}
                 height={20}
@@ -62,9 +62,19 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="https://api.whatsapp.com/send/?phone=905345701084&text&type=phone_number&app_absent=0">
               <Image
-                src="/images_s/youtube.svg"
+                src="/images_s/whatsapp.svg"
+                alt="social_media"
+                width={20}
+                height={20}
+              />
+            </Link>
+          </li>
+          <li>
+            <Link href="https://www.tiktok.com/@asil_book">
+              <Image
+                src="/images_s/tiktok.svg"
                 alt="social_media"
                 width={20}
                 height={20}
@@ -73,7 +83,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <p>
+      <p className="mt-4">
         Copyright © 2024 Asil Books | Powered by{" "}
         <Link href="https://riadosman.ramitamedia.com/">Riad Osman</Link>
       </p>

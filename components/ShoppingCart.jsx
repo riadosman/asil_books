@@ -4,7 +4,7 @@ import { cartProducts } from "@/lib/data";
 import { deleteItemFromCart } from "@/utils/cart";
 function ShoppingCart() {
   return (
-    <div className="border-2 border-slate-200  p-2 cart bg-white w-1/3 h-fit absolute top-20 right-20 z-50 rounded">
+    <div className="border-2 border-slate-200 p-2 cart bg-white w-2/3 lg:w-1/3 h-fit absolute top-20 right-20 z-50 rounded">
       <div className="border-b-2 border-text py-3 w-full text-center">
         <p className="text-xl">السلة</p>
       </div>
@@ -30,12 +30,12 @@ function ShoppingCart() {
                 <p>{e.name}</p>
                 <p>{e.price}$</p>
               </div>
-              <div className="flex">
+              <div className="flex items-center justify-between gap-2">
                 <input
                   type="number"
                   defaultValue={1}
                   max={10}
-                  className="w-6"
+                  className="w-9 text-black p-0 rounded pl-1"
                 />
                 <p>العدد</p>
               </div>

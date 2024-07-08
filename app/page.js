@@ -6,7 +6,7 @@ import PublishingHouse from "@/components/PublishingHouse";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div>
       <ImageSlider />
       <Categorys />
       <BestSelling />

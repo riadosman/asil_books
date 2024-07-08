@@ -1,43 +1,7 @@
 import Image from "next/image";
 import Banner from "./Banner";
-const BannersInfo = [
-  {
-    type: "Think and critique",
-    img: "/images/banner-1-360x175.png",
-  },
-  {
-    type: "Novels and poetry",
-    img: "/images/banner-2-360x175.png",
-  },
-  {
-    type: "Economy",
-    img: "/images/banner-3-360x175.png",
-  },
-  {
-    type: "Religions",
-    img: "/images/banner-4-360x175.png",
-  },
-  {
-    type: "history",
-    img: "/images/banner-5-360x175.png",
-  },
-  {
-    type: "Biographies and memoirs",
-    img: "/images/banner-6-360x175.png",
-  },
-  {
-    type: "Policy",
-    img: "/images/banner-7-360x175.png",
-  },
-  {
-    type: "philosophy",
-    img: "/images/banner-8-360x175.png",
-  },
-  {
-    type: "Sciences",
-    img: "/images/banner-9-360x175.png",
-  },
-];
+import { BannersInfo } from "@/lib/data";
+
 const Categorys = () => {
   return (
     <div>

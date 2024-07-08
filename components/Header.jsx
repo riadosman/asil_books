@@ -8,6 +8,7 @@ const Header = () => {
   const [query, setQuery] = useState("");
   const [cartVisiable, setCartVisiable] = useState(false);
   const [inputVisiable, setInputVisiable] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
   const handleCartClose = () => {
     localStorage.setItem("cartIsOpen", false);
     setCartVisiable(false);
@@ -29,6 +30,9 @@ const Header = () => {
   const searchBooks = () => {
     console.log("Search query:", query);
     setInputVisiable(false);
+  };
+  const showMobileMenu = () => {
+    setMobileMenu((prev) => !prev);
   };
   return (
     <header className="p-4">
@@ -100,11 +104,60 @@ const Header = () => {
               <ShoppingCart />
             </>
           )}
-          <div className="lg:hidden flex flex-col gap-1">
+          <div
+            className="lg:hidden flex flex-col gap-1"
+            onClick={() => showMobileMenu()}
+          >
             <span className="h-0.5 bg-text rounded w-6 block"></span>
             <span className="h-0.5 bg-text rounded w-6 block"></span>
             <span className="h-0.5 bg-text rounded w-6 block"></span>
           </div>
+          {mobileMenu && (
+            <div>
+              <div className="w-5/6 h-full bg-white absolute top-0 right-0 z-40"></div>
+              <ul className="absolute top-0 right-0 w-5/6 h-full flex items-center text-2xl flex-col p-8 z-50 gap-10">
+                <li
+                  className="absolute right-10 top-12"
+                  onClick={() => setMobileMenu(false)}
+                >
+                  <Image
+                    src="/images_s/vector.svg"
+                    alt="close"
+                    width={20}
+                    height={20}
+                  />
+                </li>
+                <li className="text-3xl border-b-2 border-text w-full p-2 text-center">
+                  دار الاصيل
+                </li>
+                <li>
+                  <Link href="/" onClick={() => setMobileMenu(false)}>
+                    الصفحة الرئيسية
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/books" onClick={() => setMobileMenu(false)}>
+                    الكتب
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/writers" onClick={() => setMobileMenu(false)}>
+                    الكُتتاب
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blogs" onClick={() => setMobileMenu(false)}>
+                    المقالات
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" onClick={() => setMobileMenu(false)}>
+                    تواصل معنا
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </header>

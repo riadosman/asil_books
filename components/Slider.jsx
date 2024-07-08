@@ -51,13 +51,13 @@ const ImageSlider = () => {
       ))}
 
       <button
-        className="absolute z-20 left-4 top-1/2 transform -translate-y-1/2 bg-main h-10 w-10 flex items-center justify-center rounded-full text-white"
+        className="absolute z-20 left-4 top-1/2 transform -translate-y-1/2 bg-main opacity-60 h-10 w-10 flex items-center justify-center rounded-full text-white"
         onClick={prevSlide}
       >
         &#10094;
       </button>
       <button
-        className="absolute z-20 right-4 top-1/2 transform -translate-y-1/2 bg-main h-10 w-10 flex items-center justify-center rounded-full text-white"
+        className="absolute z-20 right-4 top-1/2 transform -translate-y-1/2 bg-main opacity-60 h-10 w-10 flex items-center justify-center rounded-full text-white"
         onClick={nextSlide}
       >
         &#10095;

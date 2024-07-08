@@ -4,3 +4,6 @@ export function deleteItemFromCart(e) {
 export function checkOut(cartProducts) {
   console.log("this is all cart products" + cartProducts);
 }
+export function addToCart(book) {
+  console.log("this is the book object" + book);
+}

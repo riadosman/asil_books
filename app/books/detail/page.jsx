@@ -2,7 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-
+import { addToCart } from "@/utils/cart";
 import { booksData } from "@/lib/data.js";
 import { StarRating } from "@/components/StarRating";
 import Link from "next/link";
@@ -49,9 +49,13 @@ function Detail() {
                 <p>
                   <strong>السعر:</strong> {book.price} $
                 </p>
-                <button className="border-[1px] w-[200px] border-main text-main cursor-pointer rounded py-2 px-2 flex items-center justify-center hover:bg-main duration-200 hover:text-white">
+                <Link
+                  href="/cart"
+                  onClick={() => addToCart(book)}
+                  className="border-[1px] w-[200px] border-main text-main cursor-pointer rounded py-2 px-2 flex items-center justify-center hover:bg-main duration-200 hover:text-white"
+                >
                   اضافة الى السلة
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -60,7 +64,7 @@ function Detail() {
             <div className="mx-auto">
               <ul
                 role="list"
-                className="gap-x-8 gap-y-12 flex items-center justify-between"
+                className="gap-x-8 gap-y-12 flex items-center justify-between flex-col lg:flex-row"
               >
                 {book.commentsForBook.map((person) => (
                   <li key={person.user} className="flex-1 text-center">

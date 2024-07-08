@@ -15,7 +15,7 @@ function BestSelling() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 text-center my-10 text-lg">
           {booksData.slice(0, 4).map((book, index) => (
             <Link
-              href={`/books/detail?name=${encodeURIComponent(book.name)}`}
+              href={`/books/detail?name=${book.name}`}
               key={index}
               className="w-full border-2 border-secondary p-4 rounded cursor-pointer"
             >
