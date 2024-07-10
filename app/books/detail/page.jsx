@@ -110,6 +110,7 @@ function Detail() {
                         alt={e.name}
                         width={300}
                         height={200}
+                        className="w-full"
                       />
                       <h2 className="text-xl my-2">{e.name}</h2>
                       <p>السعر: ${e.price}</p>

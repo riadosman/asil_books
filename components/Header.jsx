@@ -19,18 +19,7 @@ const Header = () => {
     setCartVisiable(!cartVisiable);
     console.log(cartVisiable);
   };
-  const handleSearch = () => {
-    setInputVisiable(!inputVisiable);
-  };
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      searchBooks();
-    }
-  };
-  const searchBooks = () => {
-    console.log("Search query:", query);
-    setInputVisiable(false);
-  };
+
   const showMobileMenu = () => {
     setMobileMenu((prev) => !prev);
   };
@@ -65,24 +54,6 @@ const Header = () => {
         </ul>
         <div className="flex items-center gap-8">
           <div className="flex items-center justify-between">
-            <input
-              type="text"
-              placeholder="ابحث عن كتابك"
-              className={`${
-                inputVisiable ? "" : "hidden"
-              } text-right py-1 px-2 outline-none border-2 border-slate-200 text-xl rounded-xl mx-2`}
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={handleKeyDown}
-            />
-            <Image
-              src="/images_s/search.svg"
-              alt="search"
-              width={15}
-              height={15}
-              className="hidden lg:block mx-4 cursor-pointer"
-              onClick={() => handleSearch()}
-            />
             <div
               href="/cart"
               className="flex items-center justify-between gap-5 text-main"

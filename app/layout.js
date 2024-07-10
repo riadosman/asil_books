@@ -8,6 +8,7 @@ import Footer from "./../components/Footer";
 const arefRuqaa = Aref_Ruqaa({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: "دار الاصيل للكتب",
   description: "خير جليس في الأنام كتاب",
   openGraph: {
